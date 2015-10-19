@@ -10,7 +10,7 @@ ldf <- list() # creates a list
 listcsv <- dir(pattern = "*.CSV") # creates the list of all the csv files in the directory
 for (k in 1:length(listcsv)){
   ldf[[k]] <- read.csv(listcsv[k], head=F, sep="\t")
-  print(listcsv[[k]])
+  print(listcsv[[k]]) #print the filename
   for (i in 1:nrow(ldf[[k]])){
     newfile[[i]]=rep(ldf[[k]][i,4],ldf[[k]][i,5])
     }
