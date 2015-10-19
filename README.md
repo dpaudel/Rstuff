@@ -1,6 +1,8 @@
 # Rstuff
 
 <h4>Find median values for haplotypes based on multiple csv files with repeating values</h4>
+
+```
 temp<- list()
 med<-list()
 newfile<-list()
@@ -14,3 +16,4 @@ for (k in 1:length(listcsv)){
 temp[[k]]<- unlist(newfile)
 print(median(temp[[k]]))
   }
+```
