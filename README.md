@@ -23,7 +23,7 @@ for (k in 1:length(listcsv)){
 write.csv(datab, file="Depthoutput.txt", col.names=FALSE,row.names=FALSE) #Filename is .txt to avoid confusions in reading files from same folder
 
 ```
-<h4>Barplot without spaces in between plots</h4)
+<h4>Barplot without spaces in between plots </h4)
 ```
 barplot(y,x,width=1, space=c(0,0),col=c(1:5))
 ```
