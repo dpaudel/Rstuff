@@ -24,6 +24,7 @@ write.csv(datab, file="Depthoutput.txt", col.names=FALSE,row.names=FALSE) #Filen
 
 ```
 <h4>Barplot without spaces in between plots </h4)
+
 ```
 barplot(y,x,width=1, space=c(0,0),col=c(1:5))
 ```
