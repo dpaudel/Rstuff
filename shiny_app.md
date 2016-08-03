@@ -1,4 +1,7 @@
-ui.R
+First create two files called ```ui.R``` and ```server.R``` in your ```Workding directory```.
+The content of the files can be as follows:
+
+<h4> ui.R </h4>
 ```
 shinyUI(fluidPage(
   
@@ -32,7 +35,7 @@ shinyUI(fluidPage(
 ))
 ```
 
-server.R
+<h4>server.R</h4>
 ```
 shinyServer(function(input, output){
   
