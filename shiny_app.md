@@ -1,4 +1,4 @@
-First create two files called ```ui.R``` and ```server.R``` in your ```Workding directory```.
+First create two files called ```ui.R``` and ```server.R``` in your ```Working directory```.
 The content of the files can be as follows:
 
 <h4> ui.R </h4>
