@@ -14,6 +14,7 @@ lapply(names(spt1), function(x){write.table(t(spt1[[x]]), file = paste("output",
 ```
 
 <h4>Concatenate all columns into a single column and remove NaN</h4>
+
 ```
 data<-read.csv("file.csv",header=F)
 c<-as.vector(data[,1])
@@ -23,7 +24,9 @@ for (i in 2:ncol(data)){
   c<-m
 }
 m<-m[ !is.nan(m)]
+
 ```
+
 <h4>Find median depth based on multiple csv files with repeating values</h4>
 
 ```
