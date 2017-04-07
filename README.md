@@ -1,4 +1,18 @@
 # Rstuff
+<h5>Separate different files for affymetrix</h5>
+
+```
+###splitting file
+mydata<-read.table("6sample_data.txt", header=T)
+mydata2<-data.frame(mydata, sep="\\")
+library(reshape)
+library(tidyr)
+mydata3<-separate(data = mydata2, col = Probeset_ID, into = c("left", "marker","middle"), sep = "\\-")
+mydata4<-subset(mydata3[,-c(1,3,10)])
+spt1<-split(mydata4, mydata4$marker) 
+lapply(names(spt1), function(x){write.table(t(spt1[[x]]), file = paste("output", x, ".txt",sep = ""))})
+```
+
 <h4>Concatenate all columns into a single column and remove NaN</h4>
 ```
 data<-read.csv("file.csv",header=F)
