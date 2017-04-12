@@ -10,7 +10,8 @@ library(tidyr)
 mydata3<-separate(data = mydata2, col = Probeset_ID, into = c("left", "marker","middle"), sep = "\\-")
 mydata4<-subset(mydata3[,-c(1,3,10)])
 spt1<-split(mydata4, mydata4$marker) 
-lapply(names(spt1), function(x){write.table(t(spt1[[x]]), file = paste("output", x, ".txt",sep = ""))})
+newcolname<-c("Marker","A","B")
+lapply(names(spt1), function(x){write.table((t(spt1[[x]])[-1,]), quote=FALSE, col.names=FALSE, file = paste("output", x, ".txt",sep =""))})
 ```
 
 <h4>Concatenate all columns into a single column and remove NaN</h4>
