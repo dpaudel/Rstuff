@@ -35,6 +35,8 @@ LABELS=generate_label_df(TUKEY , "data$treatment")
 # A panel of colors to draw each group with the same color :
 my_colors=c( rgb(143,199,74,maxColorValue = 255),rgb(242,104,34,maxColorValue = 255), rgb(111,145,202,maxColorValue = 255),rgb(254,188,18,maxColorValue = 255) , rgb(74,132,54,maxColorValue = 255),rgb(236,33,39,maxColorValue = 255),rgb(165,103,40,maxColorValue = 255))
 
+png(filename="Std_PNG_cairo.png", type="cairo", units="in", width=5, height=4, pointsize=12, res=300)
+
 # Draw the basic boxplot
 a=boxplot(data$value ~ data$treatment , ylim=c(min(data$value) , 1.1*max(data$value)) , col=my_colors[as.numeric(LABELS[,1])] , ylab="Number of nodules" , xlab="Strain", main="")
 
@@ -44,6 +46,7 @@ over=0.1*max( a$stats[nrow(a$stats),] )
 #Add the labels
 text( c(1:nlevels(data$treatment)) , a$stats[nrow(a$stats),]+over , LABELS[,1]  , col=my_colors[as.numeric(LABELS[,1])] )
 
+dev.off()
 ```
 
 <h5>Separate different files for affymetrix</h5>
